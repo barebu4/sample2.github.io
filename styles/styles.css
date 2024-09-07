@@ -1,0 +1,160 @@
+/* .source-code-pro{
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+} */
+
+
+
+body{
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* HEADER */
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background: ghostwhite;
+}
+
+/* header button */
+
+.header-button{
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-top: 1.5em;
+    border: none;
+    z-index: 1;
+    left: -1.5em;
+    background: 0;
+}
+
+.header-button span{
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    left: 5px;
+    transition: transform .5s, opacity .5s, background-color .5s;
+}
+
+.header-button span:nth-child(1){
+    transform: translateY(-10px);
+}
+
+.header-button span:nth-child(3){
+    transform: translateY(10px);
+}
+
+.header.open .header-button span:nth-child(2){
+    opacity: 0;
+}
+    
+.header.open .header-button span:nth-child(1){
+    transform: translateY(0) rotate(45deg);
+}
+
+.header.open .header-button span:nth-child(3){
+    transform: translateY(0) rotate(-45deg);
+}
+
+
+/* header button end */
+
+.logo_conteiner{
+    display: inline-block;
+    font-size: 40px;
+    height: 100%;
+
+}
+
+.logo-name{
+    padding-top: 15px;
+    margin: 0;
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.logo-name a{
+    text-decoration: none;
+    color: gray;
+}
+
+.header-links{
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+}
+
+.header.open a{
+    color: gray;
+}
+
+.header-links a{
+    text-decoration: none;
+    color: gray;
+    transition: .5s;
+}
+
+.header-links a:hover{
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+.header-links li{
+    margin-top: 15px;
+    margin-left: 1em;
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+@media (max-width: 768px){
+    .header-button{
+        display: block;
+    }
+    .header-links{
+        background-color: gainsboro;
+        position: absolute;
+        top: 0;
+        left: -7em;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        padding-top: 4em;
+        padding-bottom: 1em;
+        width: 7em;
+        transition: transform .5s;
+    }
+    .header-links li{
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .header-links a{
+        color: black;
+        width: 100%;
+    }
+    .header.open .header-links{
+        transform: translateX(100%);
+    }
+}
+
+
+/* HEADER END */
